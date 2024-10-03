@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.dark-mode-btn {
+    position: absolute;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    transform: scale(1.1);
+}
+
+.logo1 {
+    display: block;
+    margin: 0 auto 20px auto; /* Ortala ve altına 20px boşluk bırak */
+    max-width: 150px; /* Görselin maksimum genişliğini ayarlayalım */
+    height: auto; /* Oranları koruyarak yükseklik ayarı */
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #e99707;
+    transition: color 0.3s ease;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+#seperator{
+    padding: 10px;
+}
+
+.game-btn {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding: 12px 24px;
+    font-size: 1.3rem;
+    background-color: #e99707;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(164, 109, 14, 0.3);
+    transition: transform 100ms, box-shadow 0.2s ease;
+}
+
+.game-btn:hover {
+    box-shadow: 0px 6px 12px rgba(164, 109, 14, 0.5);
+}
+
+.game-btn:active {
+    transform: scale(0.95);
+}
+
+.game-container {
+    margin-top: 20px;
+    display: none;
+}
+
+.fas.fa-gamepad{
+    font-size: 2.2rem;
+}
+
+.keyboard {
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.keyboard .row {
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.keyboard .row span {
+    display: inline-block;
+    width: 30px;
+    height: 55px;
+    line-height: 53px;
+    text-align: center;
+    border: 1px solid #333;
+    margin: 2.25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.keyboard .row span:hover {
+    background-color: #e99707;
+    color: white;
+}
+
+.keyboard .row span:active {
+    transform: scale(0.95);
+}
+
+#word {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    margin: 20px 0;
+    display: inline-block;
+    color: #333;
+}
+
+#remaining-lives, #timer {
+    font-weight: bold;
+    color: #e99707;
+    font-size: 1.5rem;
+}
+
+.fa-solid.fa-heart,.fa-solid.fa-stopwatch{
+    font-size: 1.3rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f8f9fa; /* Açık gri arka plan */
+    color: #333; /* Koyu gri metin rengi */
+    padding: 20px;
+    border-top: 1px solid #e0e0e0; /* Hafif bir üst çizgi */
+    text-align: center;
+}
+
+footer a {
+    color: #e99707; /* Mavi link rengi */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e99707; /* Link hover durumunda daha koyu mavi */
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 0.9rem; /* Biraz daha küçük font boyutu */
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212; /* Göz yormayan koyu arka plan */
+    color: #e0e0e0; /* Açık gri tonlu yazılar */
+}
+
+.dark-mode header {
+    background-color: #1c1c1c; /* Header için daha açık bir koyu ton */
+    border-bottom: 1px solid #333; /* Hafif bir alt çizgi */
+}
+
+.dark-mode .logo {
+    filter: brightness(0.8); /* Logo üzerinde biraz karartma */
+}
+
+.dark-mode .dark-mode-btn .fas {
+    color: #f1c40f; /* Sarı tonlu bir ikon rengi (karanlık mod butonu) */
+}
+
+.dark-mode h1 {
+    color: #f5f5f5; /* Başlıklar için açık beyaz */
+}
+
+.dark-mode p {
+    color: #b0b0b0; /* Metinler için hafif gri ton */
+}
+
+.dark-mode .game-btn {
+    background-color: #289be3; /* Oyun butonu için canlı bir yeşil ton */
+    color: #fff; /* Beyaz yazı */
+    box-shadow: 0px 4px 6px rgba(29, 185, 84, 0.4); /* Hafif gölge */
+}
+
+.dark-mode .game-btn:hover {
+    background-color: #289be3; /* Hover durumunda hafifçe koyulaşan yeşil */
+    box-shadow: 0px 6px 12px rgba(26, 103, 205, 0.6); /* Hover gölge */
+}
+
+.dark-mode .keyboard .row span {
+    background-color: #1e1e1e; /* Tuşlar için koyu gri arka plan */
+    border: 1px solid #333; /* Hafifçe belirginleştirilen sınırlar */
+    color: #e0e0e0; /* Açık gri yazı rengi */
+}
+
+.dark-mode .keyboard .row span:hover {
+    background-color: #e99707; /* Hover durumunda mavi ton */
+    color: #fff; /* Beyaz yazı */
+}
+
+.dark-mode #word {
+    color: #f5f5f5; /* Kelimenin görünümü için açık beyaz */
+}
+
+.dark-mode #remaining-lives, .dark-mode #timer {
+    color: #289be3; /* Canlı yeşil ton (geriye kalan can ve süre) */
+}
+
+.dark-mode footer {
+    background-color: #181818; /* Footer için koyu gri */
+    color: #ccc; /* Yazı rengini hafif griye çektik */
+    border-top: 1px solid #333; /* Hafif üst çizgi */
+}
+
+.dark-mode footer a {
+    color: #289be3; /* Linkler için yeşil */
+}
+
+.dark-mode footer a:hover {
+    color: #289be3; /* Linkler hover durumunda koyu yeşil */
+}
+
+.game-message {
+    position: absolute; /* Sayfa üzerinde sabit bir konumda kalacak */
+    bottom: 155px; /* Sayfanın altından 20px yukarıda */
+    left: 50%;
+    transform: translateX(-50%); /* Mesajı ortalar */
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none; /* Başlangıçta gizli */
+    z-index: 1000; /* Mesajın diğer elementlerin üzerinde kalması için yüksek z-index */
+    font-weight: bold;
+}
+
+.game-message.success {
+    color: #289be3; /* Kazanıldığında yeşil */
+}
+
+.game-message.fail {
+    color: #dc3545; /* Kaybedildiğinde kırmızı */
+}
+
+.keyboard-letter {
+    display: inline-block;
+    width: 30px;
+    height: 55px;
+    line-height: 53px;
+    text-align: center;
+    border: 1px solid #333;
+    margin: 2.25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.keyboard-letter:hover {
+    background-color: #e99707;
+    color: white;
+}
+
+/* Tıklanan butonlar için sabit hover efekti */
+.clicked {
+    background-color: #e99707 !important;
+    color: white;
+}
+
+/* Tıklanmış ve inaktif butonlar */
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .game-btn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+
+    #word {
+        font-size: 1.5rem;
+    }
+
+    .keyboard .row span {
+        width: 24px;
+        height: 45px;
+        line-height: 43px;
+        font-size: 1rem;
+    }
+
+    .game-message{
+        bottom: 170px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .game-btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    #word {
+        font-size: 1.2rem;
+    }
+
+    .keyboard .row span {
+        width: 30px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .game-container p {
+        font-size: 0.9rem;
+    }
+}
